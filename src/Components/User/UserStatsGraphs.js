@@ -15,7 +15,7 @@ const UserStatsGraphs = ({ data }) => {
     });
 
     setTotal(
-      data.map(({ acessos }) => Number(acessos)).reduce((a, b) => a + b),
+      data.map(({ acessos }) => Number(acessos)).reduce((a, b) => a + b, 0),
     );
     setGraph(graphData);
   }, [data]);
@@ -23,27 +23,24 @@ const UserStatsGraphs = ({ data }) => {
   return (
     <section className={`${styles.graph} animeLeft`}>
       <div className={`${styles.total} ${styles.graphItem}`}>
-        <p>total de olhadinhas: {total}</p>
-      </div>
-      <div className={styles.graphItem}>
-        <VictoryPie
-          innerRadius={50}
-          padding={{ top: 20, bottom: 20, left: 80, right: 80 }}
-          data={graph}
-          style={{
-            data: {
-              stroke: '#fff',
-              strokeWidth: 2,
-            },
-            labels: {
-              fontSize: 20,
-            },
-          }}
-        />
+        <p>Total de olhadinhas: {total}</p>
       </div>
       <div className={styles.graphItem}>
         <VictoryChart>
-          <VictoryBar alignment="start" data={graph}></VictoryBar>
+          <VictoryBar
+            alignment="start"
+            style={{
+              data: {
+                stroke: '#000',
+                strokeWidth: 1,
+                fill: '#062f6e',
+              },
+              labels: {
+                fontSize: 17,
+              },
+            }}
+            data={graph}
+          ></VictoryBar>
         </VictoryChart>
       </div>
     </section>

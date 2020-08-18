@@ -19,9 +19,11 @@
 }
 
 .login {
-  color: #333;
+  color: #062f6e;
   display: flex;
   align-items: center;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .login::after {

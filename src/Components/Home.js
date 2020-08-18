@@ -5,7 +5,7 @@ import Head from './Helper/Head';
 const Home = () => {
   return (
     <section className="container mainContainer">
-      <Head title="Homeee" description="Home doida" />
+      <Head title="Home" description="Home - CatLike" />
       <Feed />
     </section>
   );
